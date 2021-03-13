@@ -59,7 +59,38 @@ button {
     width: 160px;
     height: 38px;
     background-color: #118ab2;
-    border: none;
     color: white;
+    border: none;
     border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+/* main */
+
+main {
+    background-color: #e8d6cb;
+    color: #403d39;
+}
+
+/* h1 */
+
+.heading {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 20px;
+}
+
+h1 + p {
+    text-align: center;
+    margin-top: 6px;
+}
+
+.boxes {
+    width: 20%;
+    background-color: #fefae0;
+    border: 3px solid #cb997e;
+    border-radius: 10px;
+    margin: 2px auto;
+    padding: 10px
 }
