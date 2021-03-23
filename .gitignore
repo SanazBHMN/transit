@@ -1,0 +1,5 @@
+#ignore all text files
+*.txt
+
+#ignore filse related to api keys
+.env
