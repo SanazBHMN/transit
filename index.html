@@ -11,31 +11,33 @@
     <header>
         <nav>
             <ul>
-                <li class="left-item"><a href="transit.html">Transit</a></li>
+                <li class="left-item"><a href="https://www.google.com/maps">Transit</a></li>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="generic.html">Generic</a></li>
                 <li><a href="elements.html">Elements</a></li>
                 <li><a href="sign-up.html">Sign Up</a></li>
             </ul>
         </nav>
+        <p id="clock"></p>
+        <p id="date"></p>
         <h1>Hi. This is transit.</h1>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-        <button>Lorem ipsum dolor</button>
+        <button id="btn-header">Lorem ipsum dolor</button>
     </header>
 
     <main>
         <h1 class="heading">Consectetur adipisicing elit</h1>
         <p>Lorem ipsum dolor sit amet, delectus consequatur, similique quia!</p>
         <div class="content">
-            <div class="boxes">
+            <div class="boxes first">
                 <h3 class="sub-heading">Lorem ipsum dolor</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quam consectetur quibusdam magni minus aut modi aliquid.</p>
             </div>
-            <div class="boxes">
+            <div class="boxes second">
                 <h3 class="sub-heading">Consectetur adipisicing</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ullam consequatur repellat debitis maxime.</p>
             </div>
-            <div class="boxes">
+            <div class="boxes third">
                 <h3 class="sub-heading">Adipisicing elit totam</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque eveniet, nesciunt molestias. Ipsam, voluptate vero.</p>
             </div>
@@ -46,36 +48,36 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, autem.</p>
 
     <div class="member">
-        <div>
-            <img src="" alt="">
+        <div class="mem-1">
+            <img src="https://www.kasandbox.org/programming-images/avatars/mr-pink.png" alt="creature 1">
             <h3>Lorem ipsum</h3>
             <p>Lorem ipsum dolor</p>
         </div>
-        <div>
-            <img src="" alt="">
+        <div class="mem-2">
+            <img src="https://www.kasandbox.org/programming-images/avatars/mr-pink.png" alt="creature 2">
             <h3>Voluptatem dolores</h3>
             <p>Ullam nihil repudi</p>
         </div>
-        <div>
-            <img src="" alt="">
+        <div class="mem-3">
+            <img src="https://www.kasandbox.org/programming-images/avatars/mr-pink.png" alt="creature 3">
             <h3>Doloremque quo</h3>
             <p>Harum corrupti quia</p>
         </div>
-        <div>
-            <img src="" alt="">
+        <div class="mem-4">
+            <img src="https://www.kasandbox.org/programming-images/avatars/mr-pink.png" alt="creature 4">
             <h3>Voluptatem dicta</h3>
             <p>Et natus sapiente</p>
         </div>
     </div>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         Quibusdam dolore illum, temporibus veritatis eligendi, aliquam,
         dolor enim itaque veniam aut eaque sequi qui quia vitae pariatur
         repudiandae ab dignissimos ex!
     </p>
-    <button>Lorem ipsum dolor sit</button>
+    <button id="btn-main">Lorem ipsum dolor sit</button>
 
-    <div class="form color-white">
+    <div id="fun" class="form color-white">
         <h1 class="heading">Consectetur adipisicing elit</h1>
         <p>Lorem ipsum dolor sit amet. Delectus consequatur, similique quia!</p>
     
@@ -88,5 +90,70 @@
             <input type="submit" value="Send Message">
         </form>
     </div>
+
+    <footer>
+        <p class="info"></p>
+        <p class="jsobject"></p>
+    </footer>
+
+    <script>
+        const btnHeader = document.querySelector('#btn-header');
+        btnHeader.addEventListener('click', function(){
+            console.log('clicked');
+        });
+
+        function random(number){
+            return Math.floor(Math.random()*number);
+        }
+
+        function bgChange() {
+            const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+            document.body.style.backgroundColor = rndCol;
+        }
+
+        document.querySelector('#btn-main').addEventListener('click', bgChange);
+
+        //work on promises
+        const myPromise = new Promise((resolve, reject) => {
+            let a = 1 + 1;
+
+            if(a == 2) {
+                resolve('Success');
+            } else {
+                reject('Fail');
+            }
+        }).then((message) => {
+            console.log('then statement, ' + message);
+        }).catch((message) => {
+            console.log('catch statement, ' + message);
+        });
+
+        //set clock
+        const clock = document.querySelector('#clock');
+        setInterval(() => {
+            let d = new Date();
+            clock.innerHTML = d.getHours() + ":" +
+            d.getMinutes() + ":" +
+            d.getSeconds()
+        });
+
+        // const date = document.getElementById('#date');
+        // let d = new Date('March 30, 2021 11:37 GMT+00:00');
+        // date.innerHTML = d.toLocaleString('en-US');
+
+
+        //working on JSON
+        let text = '{"name": "Sanaz", "age": 24, "city": "Tehran"}';
+        let obj = JSON.parse(text);
+        document.querySelector('.info').innerHTML = obj.name + ", " + obj.age + ", " + obj.city;
+
+        let myJSON = JSON.stringify(obj);
+        document.querySelector('.jsobject').innerHTML = myJSON;
+
+        //working on fetch
+        fetch('https://jsonplaceholder.typicode.com/todos/5')
+         .then(res => res.json())
+         .then(data => console.log(data));
+    </script>
 </body>
 </html>

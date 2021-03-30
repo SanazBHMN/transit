@@ -1,96 +1,148 @@
-body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
-    margin: 0;
+html {
+  height: 100%;
 }
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
+  margin: 0;
+  height: 100%;
+}
+
+/* #fun {
+    background-color: darkgreen;
+    height: 200px;
+    overflow: scroll;
+} */
 
 /* header */
 
 header {
-    background-color: #3e1f47;
-    color: #fcd5ce;
+  background-color: #3e1f47;
+  color: #fcd5ce;
 }
 
 /* header nav */
 
 ul {
-    list-style-type: none;
-    display: inline;
+  list-style-type: none;
+  display: inline;
+  /* position: fixed; */
 }
 
 nav li {
-    float: left;
-    padding: 10px;
+  float: left;
+  padding: 10px;
 }
 
 a:link {
-    color: #ef476f;
-    text-decoration: none;
+  color: #ef476f;
+  text-decoration: none;
 }
 
 a:visited {
-    color: #fca311;
+  color: #fca311;
 }
 
-a[href*="transit"]:hover {
-    text-decoration: underline;
+a[href*="google"]:hover {
+  text-decoration: underline;
 }
 
 a[href$="html"]:hover {
-    color: #fcd5ce;
+  color: #fcd5ce;
+}
+
+a[href*="generic"] {
+  /* visibility: hidden; */
 }
 
 header h1 {
-    text-align: center;
-    font-weight: bolder;
-    word-spacing: 5px;
-    margin-top: 100px;
-    margin-bottom: 0;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 3em;
+  word-spacing: 5px;
+  margin-top: 100px;
+  margin-bottom: 0;
 }
 
 header p {
-    text-align: center;
-    margin-top: 6px;
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* clock */
+
+#clock {
+  width: 100px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  color: #fca311;
 }
 
 /* buttons */
 
 button {
-    width: 160px;
-    height: 38px;
-    background-color: #118ab2;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    margin-bottom: 20px;
+  width: 160px;
+  height: 38px;
+  /* position: relative;
+  left: 600px;
+  top: 5px; */
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background-color: #118ab2;
+  color: white;
+  border: none;
+}
+
+button:focus {
+  outline: none;
 }
 
 /* main */
 
 main {
-    background-color: #e8d6cb;
-    color: #403d39;
+  background-color: #e8d6cb;
+  color: #403d39;
 }
 
 /* h1 */
 
 .heading {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 20px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 20px;
+  clear: left;
 }
 
 h1 + p {
-    text-align: center;
-    margin-top: 6px;
+  text-align: center;
+  margin-top: 6px;
 }
 
 .boxes {
-    width: 20%;
-    background-color: #fefae0;
-    border: 3px solid #cb997e;
-    border-radius: 10px;
-    margin: 2px auto;
-    padding: 10px
+  width: 15em;
+  float: left;
+  background-color: #fefae0;
+  border: 3px solid #cb997e;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* members */
+
+.mem-1,
+.mem-2,
+.mem-3 {
+  float: left;
+  margin: 20px 70px
+}
+
+.mem-4 {
+  margin: 20px 70px;
+}
+
+.text {
+  clear: left;
 }
